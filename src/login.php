@@ -1,3 +1,8 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Log in</title>
+</head>
 <body>
 <div class="login">
 <form action="src/profile.php" method="post">
@@ -10,8 +15,15 @@
 </br>
     </form>
 </div>
+
 </body>
+</html>
 
-<?php
-
+<?php class Student {
+        public $indexNumber;
+        function show() {
+            echo(" $this->$indexNumber");
+        }
+    }
+    $loggedStudent = new Student
 ?>
