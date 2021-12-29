@@ -14,9 +14,4 @@
 
 <?php
 
-class Student
-{
-    public $indexNumber;
-}
-
 ?>

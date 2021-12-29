@@ -39,6 +39,8 @@ $databasename="studentsdata";
 
     include 'lectures.php';
     include 'enroll.php';
+
+    
     
 ?>
 </body>
