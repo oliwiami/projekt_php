@@ -10,9 +10,10 @@
 </head>
 <body>
 <?php
-        include 'src/profile.php';
-        include 'src/lectures.php';
-        include 'src/enroll.php';
+        include 'src/login.php';
+        //include 'src/profile.php';
+       // include 'src/lectures.php';
+        //include 'src/enroll.php';
     ?>
 </body>
 </html>
