@@ -5,7 +5,7 @@
 </head>
 <body>
 <div class="login">
-<form action="src/profile.php" method="post">
+<form action="src/profile.php" method="POST">
     <label for="username"><b>Zaloguj się</b></label></br></br>
     <label>Nazwa użytkownika: </label>
         <input type="text" placeholder="numer indeksu" id="username" name="username" required></br>
@@ -19,11 +19,6 @@
 </body>
 </html>
 
-<?php class Student {
-        public $indexNumber;
-        function show() {
-            echo(" $this->$indexNumber");
-        }
-    }
-    $loggedStudent = new Student
+<?php 
+   // $indexNumber = document.getElementById("username");
 ?>

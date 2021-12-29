@@ -4,7 +4,10 @@
     <title>Strona główna</title>
 </head>
 <body>
+</body>
 <?php
+
+//$indexNumber = $_POST['indexnum'];
 
 $hostname = "127.0.0.1";
 $username ="root";
@@ -18,7 +21,7 @@ $databasename="studentsdata";
         $databasename
     );
 
-    $dataRead ="SELECT *  FROM student";
+    $dataRead ="SELECT *  FROM student where index_number=$username";
 
     $result = $connect -> query($dataRead);
     if($result){
@@ -27,7 +30,7 @@ $databasename="studentsdata";
             echo $row["name"] ." ". $row["lastname"]."</br>";
             echo "Numer indeksu: </br>";
             echo $row["index_number"] . "</br>";
-           // echo $row["email"] . "</br>";
+            echo $row["email"] . "</br>";
         }
         $result->free();
     }
@@ -40,5 +43,4 @@ $databasename="studentsdata";
     
     
 ?>
-</body>
 </html>
