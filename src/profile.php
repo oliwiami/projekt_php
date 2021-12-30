@@ -7,7 +7,8 @@
 </body>
 <?php
 
-//$indexNumber = $_POST['indexnum'];
+$name = $_POST['uname'];
+$passwd = $_POST['userpasswd'];
 
 $hostname = "127.0.0.1";
 $username ="root";
@@ -21,7 +22,7 @@ $databasename="studentsdata";
         $databasename
     );
 
-    $dataRead ="SELECT *  FROM student where index_number=$username";
+    $dataRead ="SELECT * FROM `student` WHERE index_number=$name";
 
     $result = $connect -> query($dataRead);
     if($result){
