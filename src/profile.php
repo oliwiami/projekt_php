@@ -5,10 +5,18 @@
 </head>
 <body>
 </body>
+<script>
+       function changePage(whereToGo, messageText)
+       {
+           alert(messageText);
+           window.location=whereToGo;
+       }
+</script>
 <?php
 
 $name = $_POST['uname'];
 $passwd = $_POST['userpasswd'];
+$GLOBALS['wrongData'] = false;
 
 $hostname = "127.0.0.1";
 $username ="root";
@@ -22,7 +30,7 @@ $databasename="studentsdata";
         $databasename
     );
 
-    $dataRead ="SELECT * FROM `student` WHERE index_number=$name";
+    $dataRead ="SELECT * FROM `student` WHERE index_number=$name and pesel=$passwd";
 
     $result = $connect -> query($dataRead);
     if($result){
@@ -35,6 +43,11 @@ $databasename="studentsdata";
         }
         $result->free();
     }
+    /*else{
+
+       echo '<script>changePage("/index.php", "Niepoprawne dane");</script>';
+
+    }*/
 
     echo "--------------------------------------------------------------"."</br>";
 

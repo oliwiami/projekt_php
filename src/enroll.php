@@ -7,18 +7,43 @@
     <title>Kursy</title>
 </head>
 <body>
+
 <div class="enrollment">
-<form>
+<form action="" method="post">
     <label for="lectures">Wybierz kurs, który Cię interesuje:</label>
     <select id="lc" name="lecture">
-        <option value="excel">Excel dla zaawansowanych</option>
-        <option value="php">Programowanie w języku PHP dla początkujących</option>
-        <option value="obiektowe">Programowanie obiektowe</option>
-        <option value="historia">Historia komputerów</option>
-    </select></br>
+
+    <?php
+
+    $hostname = "127.0.0.1";
+    $username ="root";
+    $password="";
+    $databasename="studentsdata";
+    
+        $connect = new mysqli(
+            $hostname,
+            $username,
+            $password,
+            $databasename
+        );
+        $dataRead = "SELECT * FROM `student`";
+        $result = $connect -> query($dataRead);
+    
+        while ($rows = $result->fetch_assoc()){ 
+        ?>
+        <option id="opcja" value="<?php echo $rows['name'];?>"><?php echo $rows['name'];?> </option>
+<?php
+        }
+        $selected = $_POST['lecture'];
+echo $selected;
+?>
+
+</select></br>
         <button name="submit">Zapisz mnie</button>
     </form>
 </div>
+
+
 </body>
 </html>
 
