@@ -2,59 +2,43 @@
 <html lang="en">
 <head>
     <title>Strona główna</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body>
-</body>
-<script>
-       function changePage(whereToGo, messageText)
-       {
-           alert(messageText);
-           window.location=whereToGo;
-       }
-</script>
+
 <?php
+session_start();
 
-$name = $_POST['uname'];
-$passwd = $_POST['userpasswd'];
-$GLOBALS['wrongData'] = false;
+include "connect_db.php";
 
-$hostname = "127.0.0.1";
-$username ="root";
-$password="";
-$databasename="studentsdata";
+$numerindex = $_SESSION['numer_indeksu'];
+$pesel = $_SESSION['pesel'];
 
-    $connect = new mysqli(
-        $hostname,
-        $username,
-        $password,
-        $databasename
-    );
-
-    $dataRead ="SELECT * FROM `student` WHERE index_number=$name and pesel=$passwd";
+    $dataRead ="SELECT * FROM `studenci` WHERE numer_indeksu = $numerindex and pesel = $pesel ";
 
     $result = $connect -> query($dataRead);
     if($result){
         while ($row = $result->fetch_assoc()){
             echo "Imie i nazwisko: </br>";
-            echo $row["name"] ." ". $row["lastname"]."</br>";
+            echo $row["imie"] ." ". $row["nazwisko"]."</br>";
             echo "Numer indeksu: </br>";
-            echo $row["index_number"] . "</br>";
-            echo $row["email"] . "</br>";
+            echo $row["numer_indeksu"] . "</br>";
         }
         $result->free();
     }
-    /*else{
-
-       echo '<script>changePage("/index.php", "Niepoprawne dane");</script>';
-
-    }*/
+   
 
     echo "--------------------------------------------------------------"."</br>";
 
-    include 'lectures.php';
-    include 'enroll.php';
 
     
-    
 ?>
+
+<body>
+     <a href="logout.php">Logout</a></br>
+     <a href="enroll.php">Zapisz się na wykład</a>
+</body>
+
 </html>

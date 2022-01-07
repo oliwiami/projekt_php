@@ -9,33 +9,25 @@
 <body>
 
 <div class="enrollment">
+
+<a href="profile.php">Wróć</a></br>
+
 <form action="" method="post">
     <label for="lectures">Wybierz kurs, który Cię interesuje:</label>
     <select id="lc" name="lecture">
 
     <?php
 
-    $hostname = "127.0.0.1";
-    $username ="root";
-    $password="";
-    $databasename="studentsdata";
-    
-        $connect = new mysqli(
-            $hostname,
-            $username,
-            $password,
-            $databasename
-        );
-        $dataRead = "SELECT * FROM `student`";
+include "connect_db.php";
+
+        $dataRead = "SELECT * FROM `studenci`";
         $result = $connect -> query($dataRead);
     
         while ($rows = $result->fetch_assoc()){ 
         ?>
-        <option id="opcja" value="<?php echo $rows['name'];?>"><?php echo $rows['name'];?> </option>
+        <option id="opcja" value="<?php echo $rows['imie'];?>"><?php echo $rows['imie'];?> </option>
 <?php
         }
-        $selected = $_POST['lecture'];
-echo $selected;
 ?>
 
 </select></br>
