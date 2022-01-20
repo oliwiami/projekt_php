@@ -37,7 +37,7 @@ $pesel = $_SESSION['pesel'];
 ?>
 
 <body>
-     <a href="logout.php">Logout</a></br>
+     <a href="logout.php">Wyloguj </a></br>
      <a href="enroll.php">Zapisz się na wykład</a>
 </body>
 
