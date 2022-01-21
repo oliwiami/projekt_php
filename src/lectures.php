@@ -46,7 +46,7 @@
         include "connect_db.php";
         $numerindex = $_SESSION['numer_indeksu'];
 
-        $dataRead = "SELECT * FROM `kurs`";
+        $dataRead = "SELECT nazwa FROM `kurs`,`student_kurs` where kurs.id_kursu=student_kurs.id_kursu and student_kurs.numer_indeksu=$numerindex";
         $result = $connect -> query($dataRead);
     
         while ($rows = $result->fetch_assoc()){ 
