@@ -3,10 +3,6 @@ session_start();
 
 include "connect_db.php";
 
-    if (!$connect) {
-        echo "Connection failed!";
-    }
-
     $lecture = $_POST['lecture'];
 
     $dataRead ="SELECT * FROM `kurs` WHERE nazwa = '$lecture'";
@@ -36,7 +32,7 @@ include "connect_db.php";
     
     if(isset($n1)|| isset($n2)){
         //echo "Już jesteś zapisany na ten kurs";
-        header("Location: enroll.php?error=Already in course");
+        header("Location: enroll.php?error=Jestes już zapisany na ten kurs");
         exit();
     }
     else{

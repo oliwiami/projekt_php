@@ -16,13 +16,16 @@
             $_SESSION['pesel'] = $row['pesel'];
             $_SESSION['nazwisko'] = $row['nazwisko'];
         }
-       // $result->free();
-        header("Location: profile.php");
-		        exit();
+        $result->free();
+
                 
     }
+    if(isset($_SESSION['numer_indeksu']) && isset($_SESSION['pesel'])){
+        header("Location: profile.php");
+        exit();
+    }
     else{
-        header("Location: /index.php?error=Incorect User name or password");
+        header("Location: /index.php?error=Błędne dane");
         exit();
     }
 ?>
