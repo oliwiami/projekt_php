@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/style.css">
     <title>Kursy</title>
 </head>
 <style>
@@ -17,13 +18,16 @@
 
 <a href="profile.php">Wróć</a></br>
 
-<form action="" method="post">
+<form action="insert_db.php" method="post">
     <label for="lectures">Wybierz kurs, który Cię interesuje:</label>
     <select id="lc" name="lecture">
 
     <?php
+    session_start();
 
-include "connect_db.php";
+        include "connect_db.php";
+        $numerindex = $_SESSION['numer_indeksu'];
+        $pesel = $_SESSION['pesel'];
 
         $dataRead = "SELECT * FROM `kurs`";
         $result = $connect -> query($dataRead);
@@ -36,7 +40,7 @@ include "connect_db.php";
 ?>
 
 </select></br>
-        <button name="submit">Zapisz mnie</button>
+        <button id="enroll" name="enroll">Zapisz mnie</button>
 </form>
 </div></br>
 <div>
@@ -60,8 +64,9 @@ include "connect_db.php";
    ?>
 </table>
 </div>
-
-
+<?php if (isset($_GET['error'])) { ?>
+     		<p class="error"><?php echo $_GET['error']; ?></p>
+     	<?php } ?>
 </body>
 </html>
 

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <title>Strona główna</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="/style.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,13 +32,13 @@ $pesel = $_SESSION['pesel'];
 
     echo "--------------------------------------------------------------"."</br>";
 
-
     
 ?>
 
 <body>
+     <a href="enroll.php">Zapisz się na wykład</a></br>
+</br>
      <a href="logout.php">Wyloguj </a></br>
-     <a href="enroll.php">Zapisz się na wykład</a>
 </body>
 
 </html>
