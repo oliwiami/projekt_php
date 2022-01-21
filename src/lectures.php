@@ -34,5 +34,31 @@
 
 ?>
 
+<div class="leave">
+
+<form action="delete_db.php" method="post">
+    <label for="lectures">Wybierz kurs, z którego chcesz się wypisać:</label>
+    <select id="lc_2" name="lecture_2">
+
+    <?php
+    session_start();
+
+        include "connect_db.php";
+        $numerindex = $_SESSION['numer_indeksu'];
+
+        $dataRead = "SELECT * FROM `kurs`";
+        $result = $connect -> query($dataRead);
+    
+        while ($rows = $result->fetch_assoc()){ 
+        ?>
+        <option id="opcja" value="<?php echo $rows['nazwa'];?>"><?php echo $rows['nazwa'];?> </option>
+<?php
+        }
+?>
+
+</select></br>
+        <button id="leave_c" name="leave_c">Wypisz mnie</button>
+</form>
+</div></br>
 </body>
 </html>
