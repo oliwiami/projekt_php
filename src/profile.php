@@ -36,7 +36,7 @@ $pesel = $_SESSION['pesel'];
 </h3>
 <div class="buttons">
 </br>
-     <a href="lectures.php" id="lecBtn"> Moje wykłady </a>
+     <a href="lectures.php" id="lecBtn"> Moje wykłady </a></br>
      <a href="enroll.php" id="enrollBtn">Zapisz się na wykład </a></br>
 </div>     
 </br>
