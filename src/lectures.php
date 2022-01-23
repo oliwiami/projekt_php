@@ -6,9 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/style.css">
     <title>Moje wykłady</title>
-</head>
+</head>   
+<div class="mylectures">
 <body>
-<a href="profile.php">Wróć</a></br>
+<a href="profile.php">Wróć</a></br></br></br>
+<h4>
+    Moje wykłady:
+</h4>
+<div class="lclist">
 <?php
     session_start();
     $idCount;
@@ -28,18 +33,17 @@
     } 
     if(!isset($idCount)){
         echo "Nie jesteś zapisany na żadny kurs. </br>"; ?>
-        </br><a href="enroll.php">Zapisz się na wykład</a></br>
+        </br><a href="enroll.php" id="enrolltocourse">Zapisz się na wykład</a></br>
 
     <?php }
 
 ?>
+</br>
+    </div>
 
-<div class="leave">
-
-<form action="delete_db.php" method="post">
-    <label for="lectures">Wybierz kurs, z którego chcesz się wypisać:</label>
+<form id="leave" action="delete_db.php" method="post">
+    <label for="lectures">Wybierz kurs, z którego chcesz się wypisać:</label></br></br>
     <select id="lc_2" name="lecture_2">
-
     <?php
     session_start();
 
@@ -56,9 +60,10 @@
         }
 ?>
 
-</select></br>
+</select></br></br>
         <button id="leave_c" name="leave_c">Wypisz mnie</button>
 </form>
+
 </div></br>
 </body>
 </html>

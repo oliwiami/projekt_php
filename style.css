@@ -32,7 +32,13 @@ h3 {
 	border-radius: 15px;
 	padding: 15px;
 }
-
+h4{
+	text-align: center;
+	margin-bottom: 20px;
+	background-color: #ccc;
+	border-radius: 15px;
+	padding: 10px;
+}
 input {
 	display: block;
 	border: 2px solid #ccc;
@@ -75,7 +81,7 @@ h1 {
 }
 
 a {
-	float: right;
+	align-content: center;
 	background: #555;
 	padding: 10px 15px;
 	color: #fff;
@@ -99,7 +105,71 @@ a:hover{
 }
 #logout{
 	background-color:#A94442;
+	
+
 }
-#lecBtn{
-	align-items: left;
+.buttons{
+margin-left: 57px;
+}
+table, th, td {
+	border:2px solid #888;
+	background-color: #fff;
+	color:rgb(94, 143, 207);
+   }
+.enrollment{
+    width: 100%;
+    max-width: 500px;
+	border: 2px solid #ccc;
+	padding: 30px;
+	background: #fff;
+	border-radius: 15px;
+}
+.mylectures{
+	width: 100%;
+    max-width: 500px;
+	border: 2px solid #ccc;
+	padding: 30px;
+	background: #fff;
+	border-radius: 15px;
+
+}
+#leave_c{
+	float: left;
+	background: #29498b;
+	padding: 10px 15px;
+	color: #fff;
+	border-radius: 5px;
+	margin-right: 10px;
+	border: none;
+}
+#leave{
+	width: 100%;
+    max-width: 500px;
+	border: 2px solid #fff;
+	padding: 30px;
+	background: #fff;
+	border-radius: 15px;
+	text-align: center;
+}
+
+#enrollform{
+	width: 100%;
+    max-width: 500px;
+	border: 2px solid #fff;
+	padding: 30px;
+	background: #fff;
+	border-radius: 15px;
+}
+#enroll{
+	float: left;
+	background: #57b270;
+	padding: 10px 15px;
+	color: #fff;
+	border-radius: 5px;
+	margin-right: 10px;
+	border: none;
+}
+.lclist{
+	text-align: center;
+	color: rgb(94, 143, 207);
 }

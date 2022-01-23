@@ -9,6 +9,7 @@
 </head>
 <body>
 <div class="profile">
+<a href="logout.php" id="logout">Wyloguj </a></br>
 <h3>
 <?php
 session_start();
@@ -33,13 +34,15 @@ $pesel = $_SESSION['pesel'];
     
 ?>
 </h3>
+<div class="buttons">
+</br>
+     <a href="lectures.php" id="lecBtn"> Moje wykłady </a>
+     <a href="enroll.php" id="enrollBtn">Zapisz się na wykład </a></br>
+</div>     
+</br>
+</br>
+</br>
 
-</br>
-     <a href="lectures.php" id="lecBtn"> Moje wykłady </a></br>
-</br>
-     <a href="enroll.php" id="enrollBtn">Zapisz się na wykład</a></br>
-</br>
-     <a href="logout.php" id="logout">Wyloguj </a></br>
 </div>
 </body>
 

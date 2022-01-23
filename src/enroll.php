@@ -6,19 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/style.css">
     <title>Kursy</title>
-</head>
-<style>
- table, th, td {
- border:1px solid black
-}
-</style>
+</head> 
 <body>
 
 <div class="enrollment">
 
-<a href="profile.php">Wróć</a></br>
 
-<form action="insert_db.php" method="post">
+
+<form id="enrollform" action="insert_db.php" method="post">
+<a href="profile.php">Wróć</a></br></br></br>
     <label for="lectures">Wybierz kurs, który Cię interesuje:</label>
     <select id="lc" name="lecture">
 
@@ -39,11 +35,11 @@
         }
 ?>
 
-</select></br>
-        <button id="enroll" name="enroll">Zapisz mnie</button>
+</select></br></br>
+        <button id="enroll" name="enroll">Zapisz mnie</button></br></br>
 </form>
-</div></br>
-<div>
+</br>
+
    <?php
    include "connect_db.php";
    $dataRead ="SELECT k.nazwa, k.ilosc_miejsc-(count(sk.numer_indeksu)) AS pozostalo FROM studenci.kurs k left join studenci.student_kurs sk on k.id_kursu=sk.id_kursu group by k.id_kursu ,k.nazwa, k.ilosc_miejsc ";
