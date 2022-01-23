@@ -69,7 +69,8 @@ button:hover{
    background: #F2DEDE;
    color: #A94442;
    padding: 10px;
-   width: 27%;
+   width: 100%;
+   max-width: 500px;
    border-radius: 5px;
    margin: 20px auto;
    text-align: center;
