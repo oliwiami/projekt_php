@@ -35,13 +35,24 @@ include "connect_db.php";
         header("Location: enroll.php?error=Jestes już zapisany na ten kurs");
         exit();
     }
-    else{
-        //echo "Możesz się zapisać";
-        
+    else{  
+        $spotsQuery="SELECT k.nazwa, k.ilosc_miejsc-(count(sk.numer_indeksu)) AS pozostalo FROM studenci.kurs k left join studenci.student_kurs sk on k.id_kursu=sk.id_kursu where k.id_kursu=$courseID group by k.id_kursu ,k.nazwa, k.ilosc_miejsc ";
+        $result = $connect -> query($spotsQuery);
+    if($result){
+        while ($row = $result->fetch_assoc()){
+            $n3 = $row['pozostalo'];
+        }
+        $result -> free();
+    }
+    if($n3==0){
+        header("Location: enroll.php?error=Brak miejsc");
+        exit();
+    } else{
          $insertQuery ="INSERT INTO `student_kurs` values(". $numerindex . "," . $courseID .")";
          $result = $connect -> query($insertQuery);
          header("Location: enroll.php");
          exit();
+    }
     }
 
     ?>
