@@ -31,7 +31,6 @@ include "connect_db.php";
     } 
     
     if(isset($n1)|| isset($n2)){
-        //echo "Już jesteś zapisany na ten kurs";
         header("Location: enroll.php?error=Jestes już zapisany na ten kurs");
         exit();
     }
@@ -54,5 +53,4 @@ include "connect_db.php";
          exit();
     }
     }
-
     ?>
